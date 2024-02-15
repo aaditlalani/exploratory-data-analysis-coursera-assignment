@@ -1,18 +1,13 @@
-##############################
-# NOTE: This is a script to download the 'household_power_consumption.txt' dataset if the file  
-# doesn't exist- or if the zip has been downloaded, simply unzips it
 
-# Download Link
-# https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
 
 dataset_URL = "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
 
 if(!file.exists("dataset/household_power_consumption.txt")){
-  # check if the original zip file is there - either the default name ('exdata_data_household_power_consumption.zip')
-  # or the name we give it ('dataset.zip')
+  # checking if the original zip file is there,either the default name ('exdata_data_household_power_consumption.zip')
+  # or we change the name to  ('dataset.zip')
   if(!file.exists("dataset/exdata_data_household_power_consumption.zip") & !file.exists("dataset/dataset.zip")){
-    print("Dataset zip not available locally")
-    choice = readline(prompt = "Download dataset?(size = 19.7 MB) - Press 1 to continue, any other key to exit: ")
+    print("Dataset zip is  not available locally")
+    choice = readline(prompt = "Download dataset?(size = 19.7 MB) - Press 1 to continue, or press any other key to exit: ")
     if(choice == "1"){
       print(paste0("Downloading dataset from link '", dataset_URL, "' now..."))
       download.file(dataset_URL, "dataset/dataset.zip")
