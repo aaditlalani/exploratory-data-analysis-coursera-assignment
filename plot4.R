@@ -7,10 +7,10 @@ date_time = dataset_time[[2]]
 png(file = "plot4.png",width = 480, height = 480)
 
 par(mfrow = c(2,2))
-# Global Active Power
+#plotting Global Active Power
 plot(date_time, household_data$Global_active_power, type = "l", ylab = "Global Active Power(kilowatts)", xlab = "")
 
-# Voltage
+#plotting Voltage
 plot(date_time, household_data$Voltage, type = "l", ylab = "Voltage", xlab = "datetime")
 
 # Submetering
